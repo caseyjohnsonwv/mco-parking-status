@@ -38,8 +38,7 @@ class PostgresWrapper:
 
     def execute_startup():
         with PostgresWrapper.get_engine() as engine:
-            if env.ENV_NAME.lower() == 'local':
-                Base.metadata.drop_all(engine)
-                logger.info('Dropped DB tables')
+            Base.metadata.drop_all(engine)
+            logger.info('Dropped DB tables')
             Base.metadata.create_all(engine)
             logger.info('Created DB tables')
