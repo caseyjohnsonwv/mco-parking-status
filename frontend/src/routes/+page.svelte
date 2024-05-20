@@ -4,9 +4,6 @@
     import moment_timezone from "moment-timezone";
     import LocationList from "./LocationList.svelte";
 
-    // trying a solution from a github issue thread
-    const { PUBLIC_API_BASE_URL } = env
-
     let refreshTimestamp: string;
     let locations: {name:string, status:string, daily_rate_usd:number, last_updated_datetime:string}[];
 
@@ -17,7 +14,7 @@
 
 
     onMount(() => {
-        fetch(`${PUBLIC_API_BASE_URL}/mco/`)
+        fetch(`${env.PUBLIC_API_BASE_URL}/mco/`)
             .then((res) => {
                 console.log(res);
                 res.json().then((j) => locations = j.locations);
