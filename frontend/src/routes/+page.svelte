@@ -42,7 +42,7 @@
                     </a>
                 </div>
                 <div class="font-light max-w-64 mx-auto bg-blue-800 text-zinc-50 p-1 pt-1.5 rounded-sm">
-                    <a href="https://linkedin.com/in/caseyjohnsonwv" target="_blank" class="flex flex-row justify-center space-x-3 items-baseline text-sm">
+                    <a href="https://linkedin.com/in/caseyjohnsonwv" target="_blank" class="flex flex-row justify-center space-x-2 items-baseline text-sm">
                         <span>Created by Casey Johnson</span>
                         <i class="fa-brands fa-linkedin text-lg"></i>
                     </a>
