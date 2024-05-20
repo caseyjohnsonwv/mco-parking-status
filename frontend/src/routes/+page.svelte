@@ -14,7 +14,7 @@
 
 
     onMount(() => {
-        fetch(`${env.PUBLIC_API_BASE_URL}/mco/`)
+        fetch(`${env.PUBLIC_API_BASE_URL ?? 'http://localhost:8080'}/mco/`)
             .then((res) => {
                 console.log(res);
                 res.json().then((j) => locations = j.locations);

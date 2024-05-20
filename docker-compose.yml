@@ -17,6 +17,6 @@ services:
     container_name: frontend
     build:
       context: ./frontend
-      dockerfile: Dockerfile.local
+      dockerfile: Dockerfile
     ports:
       - "80:80"

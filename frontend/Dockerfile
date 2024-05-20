@@ -3,8 +3,6 @@ FROM node:19 AS builder
 COPY package.json .
 RUN npm i --verbose
 
-ENV NODE_ENV=prod
-
 COPY . .
 RUN npm run build
 
