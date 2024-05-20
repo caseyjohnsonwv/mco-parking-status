@@ -1,8 +1,11 @@
 <script lang="ts">
-    import { PUBLIC_API_BASE_URL } from "$env/static/public";
+    import { env } from "$env/dynamic/public";
     import { onMount } from "svelte";
     import moment_timezone from "moment-timezone";
     import LocationList from "./LocationList.svelte";
+
+    // trying a solution from a github issue thread
+    const { PUBLIC_API_BASE_URL } = env
 
     let refreshTimestamp: string;
     let locations: {name:string, status:string, daily_rate_usd:number, last_updated_datetime:string}[];
