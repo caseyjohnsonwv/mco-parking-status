@@ -1,24 +1,6 @@
 version: '3.9'
 
-services:
-  postgres:
-    container_name: postgres
-    image: postgres:16-alpine
-    environment:
-      - POSTGRES_USER=admin
-      - POSTGRES_PASSWORD=admin
-      - POSTGRES_DB=parking
-    ports:
-      - "5432:5432"
-
-  adminer:
-    container_name: adminer
-    image: adminer
-    environment:
-      - ADMINER_DESIGN=mancave
-    ports:
-     - "8081:8080"
-    
+services:    
   backend:
     container_name: backend
     build:

@@ -19,7 +19,8 @@ class Base(DeclarativeBase):
 
 class PostgresWrapper:
     def build_uri() -> str:
-        return f"postgresql+psycopg2://{env.DB_USER}:{env.DB_PASSWORD}@{env.DB_HOST}:{env.DB_PORT}/{env.DB_NAME}"
+        # return f"postgresql+psycopg2://{env.DB_USER}:{env.DB_PASSWORD}@{env.DB_HOST}:{env.DB_PORT}/{env.DB_NAME}"
+        return f"sqlite:///app.db"
     
     @contextmanager
     def get_engine(echo:bool=False) -> Generator[Engine, None, None]:
