@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { PUBLIC_API_BASE_URL } from "$env/static/public";
+    import { env } from "$env/dynamic/public";
     import { onMount } from "svelte";
     import moment_timezone from "moment-timezone";
     import LocationList from "./LocationList.svelte";
@@ -14,7 +14,7 @@
 
 
     onMount(() => {
-        fetch(`${PUBLIC_API_BASE_URL}/mco/`)
+        fetch(`${env.PUBLIC_API_BASE_URL}/mco/`)
             .then((res) => res.json().then((j) => locations = j.locations))
             .catch((err) => console.error(err))
         ;
