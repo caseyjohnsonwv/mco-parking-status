@@ -3,7 +3,7 @@ FROM node:19 AS builder
 COPY package.json .
 RUN npm i --verbose
 
-ENV NODE_ENV=prod
+ENV NODE_ENV=local
 
 COPY . .
 RUN npm run build
