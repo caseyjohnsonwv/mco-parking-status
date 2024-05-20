@@ -15,7 +15,10 @@
 
     onMount(() => {
         fetch(`${env.PUBLIC_API_BASE_URL}/mco/`)
-            .then((res) => res.json().then((j) => locations = j.locations))
+            .then((res) => {
+                console.log(res);
+                res.json().then((j) => locations = j.locations);
+            })
             .catch((err) => console.error(err))
         ;
 
