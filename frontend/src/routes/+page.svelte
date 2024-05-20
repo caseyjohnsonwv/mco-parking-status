@@ -12,15 +12,11 @@
     $: valetLocations = locations ? locations.filter((v) => (v.name.toLowerCase().includes('valet') && !v.name.toLowerCase().includes('hotel'))).sort((a,b) => (a.name.localeCompare(b.name))) : [];
     $: surfaceLocations = locations ? locations.filter((v) => (v.name.toLowerCase().includes('surface'))).sort((a,b) => (a.name.localeCompare(b.name))) : [];
 
-
     onMount(() => {
-        console.log(env.PUBLIC_API_BASE_URL);
-
         fetch(`${env.PUBLIC_API_BASE_URL}/mco/`)
-            .then((res) => res.json().then((j) => locations = j.locations))
-            .catch((err) => console.error(err))
-        ;
-
+        .then((res) => res.json().then((j) => locations = j.locations))
+        .catch((err) => console.error(err));
+        
         refreshTimestamp = moment_timezone().tz('America/New_York').format('h:mm a');
     });
 </script>
