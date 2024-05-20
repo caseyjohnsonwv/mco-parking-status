@@ -14,11 +14,10 @@
 
 
     onMount(() => {
-        fetch(`${env.PUBLIC_API_BASE_URL ?? 'http://localhost:8080'}/mco/`)
-            .then((res) => {
-                console.log(res);
-                res.json().then((j) => locations = j.locations);
-            })
+        console.log(env.PUBLIC_API_BASE_URL);
+
+        fetch(`${env.PUBLIC_API_BASE_URL}/mco/`)
+            .then((res) => res.json().then((j) => locations = j.locations))
             .catch((err) => console.error(err))
         ;
 
