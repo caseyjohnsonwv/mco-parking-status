@@ -16,7 +16,7 @@
             console.log(j)
             locations = j.locations
         }))
-        .catch((err) => console.error(err));{}
+        .catch((err) => console.error(err));
         
         refreshTimestamp = moment_timezone().tz('America/New_York').format('h:mm a');
     });

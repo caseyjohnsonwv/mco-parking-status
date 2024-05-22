@@ -15,13 +15,13 @@ export const GET:RequestHandler = async () => {
 
     // convert table to ParkingLocation interfaces
     const parkingLocationsList: ParkingLocation[] = [];
-    for (var i = 0; i < upstreamTableCells.length; i += 3) {
+    for (let i = 0; i < upstreamTableCells.length; i += 3) {
 
-        let locationName = upstreamTableCells[i].innerText.trim();
-        let daily_rate_usd = upstreamTableCells[i+1].innerText.trim().replace('$', '').toUpperCase().replace('FREE', '0');
-        let status = upstreamTableCells[i+2].innerText.trim();
+        const locationName = upstreamTableCells[i].innerText.trim();
+        const daily_rate_usd = upstreamTableCells[i+1].innerText.trim().replace('$', '').toUpperCase().replace('FREE', '0');
+        const status = upstreamTableCells[i+2].innerText.trim();
 
-        let parkingLocation: ParkingLocation = {
+        const parkingLocation: ParkingLocation = {
             name: locationName,
             daily_rate_usd: parseInt(daily_rate_usd),
             status: status.length > 0 ? status.toUpperCase() : 'OPEN',
