@@ -1,11 +1,10 @@
 <script lang="ts">
-    import { env } from "$env/dynamic/public";
     import { onMount } from "svelte";
     import moment_timezone from "moment-timezone";
     import LocationList from "./LocationList.svelte";
 
     let refreshTimestamp: string;
-    let locations: {name:string, status:string, daily_rate_usd:number, last_updated_datetime:string}[];
+    let locations: {name:string, status:string, daily_rate_usd:number}[];
 
     $: garageLocations = locations ? locations.filter((v) => (v.name.toLowerCase().includes('garage') || v.name.toLowerCase().includes('terminal top'))).sort((a,b) => (a.name.localeCompare(b.name))) : [];
     $: economyLocations = locations ? locations.filter((v) => (v.name.toLowerCase().includes('economy'))).sort((a,b) => (a.name.localeCompare(b.name))) : [];
@@ -13,9 +12,11 @@
     $: surfaceLocations = locations ? locations.filter((v) => (v.name.toLowerCase().includes('surface'))).sort((a,b) => (a.name.localeCompare(b.name))) : [];
 
     onMount(() => {
-        fetch(`${env.PUBLIC_API_BASE_URL}/mco/`)
-        .then((res) => res.json().then((j) => locations = j.locations))
-        .catch((err) => console.error(err));
+        fetch('/api/data').then((res) => res.json().then((j) => {
+            console.log(j)
+            locations = j.locations
+        }))
+        .catch((err) => console.error(err));{}
         
         refreshTimestamp = moment_timezone().tz('America/New_York').format('h:mm a');
     });
