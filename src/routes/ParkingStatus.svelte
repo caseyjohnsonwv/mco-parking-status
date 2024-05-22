@@ -1,5 +1,5 @@
 <script lang="ts">
-    export let props: {name:string, status:string, daily_rate_usd:number, last_updated_datetime:string};
+    export let props: {name:string, status:string, daily_rate_usd:number};
 
     $: isOpen = props.status.toLowerCase() === 'open';
 </script>
