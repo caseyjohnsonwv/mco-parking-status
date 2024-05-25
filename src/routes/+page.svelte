@@ -13,7 +13,6 @@
 
     onMount(() => {
         fetch('/api/data').then((res) => res.json().then((j) => {
-            console.log(j)
             locations = j.locations
         }))
         .catch((err) => console.error(err));
@@ -23,7 +22,7 @@
 </script>
 
 <div class="bg-zinc-900 text-zinc-200">
-    <div class="mx-auto max-w-4xl w-screen min-h-screen px-4 py-10 justify-center space-y-7">
+    <div class="mx-auto max-w-xl w-screen min-h-screen px-4 py-10 justify-center flex flex-col space-y-7">
         {#if locations}
             <div class="text-center space-y-3 font-light">
                 <p class="text-3xl">MCO Parking Status</p>
@@ -49,6 +48,15 @@
                     </a>
                 </div>
             </div>
+            <hr>
+            <a href="https://venmo.com/u/caseyjohnsonwv" target="_blank">
+                <div class="bg-zinc-800 text-zinc-400 text-sm flex flex-col justify-center text-center p-2 rounded-md">
+                    <span class="font-semibold mb-2">This page costs $97/year to operate.</span>
+                    <span class="font-light">Domain name registration: $13/year.</span>
+                    <span class="font-light">Server: $84/year (billed monthly for $7).</span>
+                    <span class="font-medium mt-2 underline">Donations appreciated, never expected!</span>
+                </div>
+            </a>
         {:else}
             <div class="text-center font-light mt-24">
                 <i class="fa-solid fa-spinner animate-spin"></i>
