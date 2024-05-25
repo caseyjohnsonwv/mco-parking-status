@@ -18,12 +18,12 @@ export const GET:RequestHandler = async () => {
     for (let i = 0; i < upstreamTableCells.length; i += 3) {
 
         const locationName = upstreamTableCells[i].innerText.trim();
-        const daily_rate_usd = upstreamTableCells[i+1].innerText.trim().replace('$', '').toUpperCase().replace('FREE', '0');
+        const dailyRateUSD = upstreamTableCells[i+1].innerText.trim().replace('$', '').toUpperCase().replace('FREE', '0');
         const status = upstreamTableCells[i+2].innerText.trim();
 
         const parkingLocation: ParkingLocation = {
             name: locationName,
-            daily_rate_usd: parseInt(daily_rate_usd),
+            dailyRateUSD: parseInt(dailyRateUSD),
             status: status.length > 0 ? status.toUpperCase() : 'OPEN',
         };
 

@@ -1,7 +1,7 @@
 <script lang="ts">
     import ParkingStatus from "./ParkingStatus.svelte";
 
-    export let locations: {name:string, status:string, daily_rate_usd:number}[];
+    export let locations: {name:string, status:string, dailyRateUSD:number}[];
 </script>
 
 <div class="mx-auto max-w-4xl space-y-4 p-3 bg-zinc-300 text-zinc-900 rounded-sm">

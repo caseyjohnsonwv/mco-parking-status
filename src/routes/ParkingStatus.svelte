@@ -1,5 +1,5 @@
 <script lang="ts">
-    export let props: {name:string, status:string, daily_rate_usd:number};
+    export let props: {name:string, status:string, dailyRateUSD:number};
 
     $: isOpen = props.status.toLowerCase() === 'open';
 </script>
@@ -10,6 +10,6 @@
     </div>
     <div class="flex flex-row align-middle items-center space-x-5 w-1/3 justify-end">
         <span>{props.status}</span>
-        <span>${props.daily_rate_usd}/day</span>
+        <span>${props.dailyRateUSD}/day</span>
     </div>
 </div>

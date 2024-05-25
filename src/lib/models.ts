@@ -1,5 +1,5 @@
 export interface ParkingLocation {
     name: string;
-    daily_rate_usd: number;
+    dailyRateUSD: number;
     status: string;
 }

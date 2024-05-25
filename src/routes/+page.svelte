@@ -4,7 +4,7 @@
     import LocationList from "./LocationList.svelte";
 
     let refreshTimestamp: string;
-    let locations: {name:string, status:string, daily_rate_usd:number}[];
+    let locations: {name:string, status:string, dailyRateUSD:number}[];
 
     $: garageLocations = locations ? locations.filter((v) => (v.name.toLowerCase().includes('garage') || v.name.toLowerCase().includes('terminal top'))).sort((a,b) => (a.name.localeCompare(b.name))) : [];
     $: economyLocations = locations ? locations.filter((v) => (v.name.toLowerCase().includes('economy'))).sort((a,b) => (a.name.localeCompare(b.name))) : [];
