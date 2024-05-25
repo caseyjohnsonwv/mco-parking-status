@@ -29,10 +29,22 @@
                 <p class="text-xs">Refreshed at <span class="px-1.5 mx-0.5 rounded-sm bg-blue-800 font-medium">{refreshTimestamp.toUpperCase()}</span> Orlando time.</p>
             </div>
             <div class="space-y-5">
-                <LocationList locations={economyLocations}>Economy Lots</LocationList>
-                <LocationList locations={surfaceLocations}>Surface Lots</LocationList>
-                <LocationList locations={garageLocations}>Garages</LocationList>
-                <LocationList locations={valetLocations}>Valets</LocationList>
+                <LocationList locations={economyLocations}>
+                    <span slot="title">Economy Lots</span>
+                    <span slot="payment">Cash, card, or E-Pass/SunPass</span>
+                </LocationList>
+                <LocationList locations={surfaceLocations}>
+                    <span slot="title">Surface Lots</span>
+                    <span slot="payment">E-Pass/SunPass ONLY</span>
+                </LocationList>
+                <LocationList locations={garageLocations}>
+                    <span slot="title">Garages</span>
+                    <span slot="payment">Cash, card, or E-Pass/Sunpass</span>
+                </LocationList>
+                <LocationList locations={valetLocations}>
+                    <span slot="title">Valets</span>
+                    <span slot="payment">Cash or card ONLY. Open 6:00am - 11:00pm</span>
+                </LocationList>
             </div>
             <div class="space-y-3">
                 <div class="font-semibold max-w-64 mx-auto bg-zinc-100 text-zinc-900 p-1 pt-1.5 rounded-sm">
