@@ -54,7 +54,7 @@
                     <span class="font-semibold mb-2">This page costs $97/year to operate.</span>
                     <span class="font-light">Domain name registration: $13/year.</span>
                     <span class="font-light">Server: $84/year (billed monthly for $7).</span>
-                    <span class="font-medium mt-2 underline">Donations accepted via Venmo!</span>
+                    <span class="font-medium mt-2 underline">Donations welcome via Venmo!</span>
                 </div>
             </a>
         {:else}
