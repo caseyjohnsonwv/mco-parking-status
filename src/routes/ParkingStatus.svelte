@@ -4,7 +4,7 @@
     $: isOpen = props.status.toLowerCase() === 'open';
 </script>
 
-<div class="flex flex-row align-middle items-center justify-between text-xs font-semibold {isOpen ? 'bg-green-500' : 'bg-red-600'} py-1 px-2 rounded-sm">
+<div class="flex flex-row align-middle items-center justify-between text-xs font-semibold {isOpen ? 'bg-green-500' : 'bg-red-500'} py-1 px-2 rounded-sm">
     <div class="w-2/3">
         {props.name}
     </div>
