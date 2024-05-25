@@ -70,7 +70,8 @@
                 </div>
             </a>
         {:else}
-            <div class="text-center font-light mt-24">
+            <div class="text-center font-light flex flex-col space-y-3">
+                <p class="text-xs text-zinc-200">Refreshing...</p>
                 <i class="fa-solid fa-spinner animate-spin"></i>
             </div>
         {/if}
