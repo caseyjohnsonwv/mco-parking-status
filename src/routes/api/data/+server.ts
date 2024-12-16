@@ -9,11 +9,12 @@ const parkingSiteUrl = 'https://orlandoairports.net/parking-transportation/parki
 export const GET:RequestHandler = async () => {
     // retrieve table from upstream
     const res = await fetch(parkingSiteUrl);
+    console.log(res);
     const bodyText = await res.text();
+    console.log(bodyText);
     const upstreamTable = parse(bodyText).getElementsByTagName('section').filter((e) => e.id === 'parking-rates')[0];
-    console.log(upstreamTable)
+    console.log(upstreamTable);
     const upstreamTableCells = upstreamTable.getElementsByTagName('td');
-    console.log(upstreamTableCells)
 
     // convert table to ParkingLocation interfaces
     const parkingLocationsList: ParkingLocation[] = [];
