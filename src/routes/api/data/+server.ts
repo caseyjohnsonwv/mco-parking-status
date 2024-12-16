@@ -3,7 +3,7 @@ import { parse } from 'node-html-parser';
 import { type ParkingLocation } from '$lib/models';
 
 
-const parkingSiteUrl = 'https://orlandoairports.net/parking-transportation/parking/'
+const parkingSiteUrl = 'https://wifi.orlandoairports.net/parking-transportation/parking/'
 
 
 export const GET:RequestHandler = async () => {
