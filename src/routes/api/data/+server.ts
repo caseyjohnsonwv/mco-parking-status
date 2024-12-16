@@ -11,7 +11,9 @@ export const GET:RequestHandler = async () => {
     const res = await fetch(parkingSiteUrl);
     const bodyText = await res.text();
     const upstreamTable = parse(bodyText).getElementsByTagName('section').filter((e) => e.id === 'parking-rates')[0];
+    console.log(upstreamTable)
     const upstreamTableCells = upstreamTable.getElementsByTagName('td');
+    console.log(upstreamTableCells)
 
     // convert table to ParkingLocation interfaces
     const parkingLocationsList: ParkingLocation[] = [];
