@@ -9,11 +9,8 @@ const parkingSiteUrl = 'https://wifi.orlandoairports.net/parking-transportation/
 export const GET:RequestHandler = async () => {
     // retrieve table from upstream
     const res = await fetch(parkingSiteUrl);
-    console.log(res);
     const bodyText = await res.text();
-    console.log(bodyText);
     const upstreamTable = parse(bodyText).getElementsByTagName('section').filter((e) => e.id === 'parking-rates')[0];
-    console.log(upstreamTable);
     const upstreamTableCells = upstreamTable.getElementsByTagName('td');
 
     // convert table to ParkingLocation interfaces
